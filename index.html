@@ -1,0 +1,681 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Website Demo Samples for Malaysian Businesses</title>
+    <meta
+      name="description"
+      content="Browse website demo samples for restaurants, beauty salons, and company profiles. Fully customizable for your business."
+    />
+    <style>
+      :root {
+        --bg: #ffffff;
+        --surface: #ffffff;
+        --surface-alt: #ebf2f9;
+        --text: #1f2937;
+        --muted: #5b6778;
+        --muted-strong: #3f5166;
+        --primary: #1f6fb2;
+        --primary-dark: #174f80;
+        --accent: #0ea57c;
+        --border: #dce7f1;
+        --whatsapp: #25d366;
+        --whatsapp-dark: #1ca653;
+        --shadow-soft: 0 4px 16px rgba(0, 0, 0, 0.05);
+        --section-lg: 64px;
+        --section-sm: 40px;
+        --box-pad-x: 32px;
+        --radius: 12px;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        font-family: "Segoe UI", Tahoma, sans-serif;
+        color: var(--text);
+        background: var(--bg);
+        line-height: 1.6;
+      }
+
+      .container {
+        width: 100%;
+        max-width: 1200px;
+        padding-left: 24px;
+        padding-right: 24px;
+        margin: 0 auto;
+      }
+
+      .hero {
+        padding: 70px 0 60px;
+        text-align: center;
+      }
+
+      .hero-highlight {
+        display: inline-block;
+        padding: 6px 12px;
+        border-radius: 999px;
+        background: var(--surface-alt);
+        border: 1px solid var(--border);
+        color: var(--primary-dark);
+        font-weight: 700;
+        font-size: 0.92rem;
+      }
+
+      .hero-subtitle {
+        max-width: 720px;
+        margin: 0 auto 10px;
+      }
+
+      .hero-audience {
+        color: var(--muted-strong);
+        margin: 0 auto 14px;
+        max-width: 720px;
+      }
+
+      .hero-cta-row {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        margin-bottom: 14px;
+        flex-wrap: wrap;
+      }
+
+      .benefit-row {
+        margin: 2px auto 0;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+        max-width: 860px;
+      }
+
+      .benefit-chip {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid var(--border);
+        border-radius: 999px;
+        background: #f1f5f9;
+        padding: 8px 14px;
+        color: var(--muted-strong);
+        font-size: 14px;
+        font-weight: 700;
+      }
+
+      h1,
+      h2,
+      h3 {
+        margin: 0 0 10px;
+        line-height: 1.25;
+      }
+
+      h4 {
+        margin: 0 0 6px;
+        line-height: 1.25;
+        font-size: 1.06rem;
+      }
+
+      p {
+        margin: 0 0 12px;
+      }
+
+      .cards {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+        margin: 0;
+      }
+
+      .pricing-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+        margin: 14px 0 14px;
+      }
+
+      .price-range {
+        color: var(--primary-dark);
+        font-weight: 800;
+        font-size: 1.6rem;
+        line-height: 1.2;
+        margin-bottom: 4px;
+      }
+
+      .pricing-note {
+        color: var(--muted);
+        font-size: 0.95rem;
+        margin: 14px 0 0;
+        max-width: 720px;
+      }
+
+      .card {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        padding: 24px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        box-shadow: var(--shadow-soft);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+      }
+
+      .card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 14px 32px rgba(24, 53, 89, 0.12);
+      }
+
+      .card p {
+        color: var(--muted);
+      }
+
+      .cards .btn {
+        margin-top: auto;
+      }
+
+      .fit-line {
+        margin-top: -2px;
+        color: var(--muted-strong);
+        font-size: 0.9rem;
+        font-weight: 600;
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 999px;
+        border: 1px solid transparent;
+        padding: 10px 16px;
+        min-height: 44px;
+        text-decoration: none;
+        font-weight: 700;
+        transition: 0.2s ease;
+      }
+
+      .btn:hover {
+        transform: translateY(-1px);
+      }
+
+      .btn-primary {
+        background: var(--primary);
+        color: #fff;
+      }
+
+      .btn-primary:hover {
+        background: var(--primary-dark);
+      }
+
+      .btn-secondary {
+        background: var(--surface);
+        color: var(--primary-dark);
+        border-color: var(--border);
+      }
+
+      .btn-secondary:hover {
+        background: #f8fafc;
+      }
+
+      .note {
+        background: var(--surface-alt);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        padding: 20px;
+        margin-bottom: 26px;
+      }
+
+      .customize-list {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        padding: 20px;
+        margin-bottom: 26px;
+      }
+
+      .customize-list ul {
+        margin: 8px 0 0;
+        padding-left: 20px;
+        color: var(--muted);
+      }
+
+      .cta {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        padding: 24px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 14px;
+        flex-wrap: wrap;
+        margin-bottom: 40px;
+      }
+
+      .btn-whatsapp {
+        background: var(--whatsapp);
+        color: #fff;
+      }
+
+      .btn-whatsapp:hover {
+        background: var(--whatsapp-dark);
+      }
+
+      .floating-whatsapp {
+        position: fixed;
+        right: 20px;
+        bottom: calc(20px + env(safe-area-inset-bottom));
+        width: 54px;
+        height: 54px;
+        border-radius: 50%;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background: var(--whatsapp);
+        color: #fff;
+        font-size: 0.75rem;
+        font-weight: 800;
+        text-decoration: none;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        z-index: 40;
+        transition: transform 0.2s ease, background 0.2s ease;
+      }
+
+      .floating-whatsapp:hover {
+        background: var(--whatsapp-dark);
+        transform: translateY(-2px) scale(1.03);
+      }
+
+      .simple-section {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        padding: 20px;
+        margin: 0;
+        box-shadow: var(--shadow-soft);
+      }
+
+      .section-intro {
+        margin: 0 0 28px;
+        text-align: center;
+      }
+
+      .section-intro h2,
+      .simple-section h3,
+      .customize-list h3,
+      .cta h3 {
+        margin-bottom: 24px;
+      }
+
+      .section-intro p {
+        margin: 0 auto;
+        color: var(--muted);
+        max-width: 720px;
+      }
+
+      .package-card {
+        position: relative;
+      }
+
+      .package-card .btn {
+        margin-top: auto;
+      }
+
+      .package-name {
+        margin: 0 0 2px;
+      }
+
+      .package-desc {
+        margin: 0;
+        color: var(--muted-strong);
+        font-size: 0.9rem;
+        font-weight: 600;
+      }
+
+      .popular-badge {
+        position: absolute;
+        top: 14px;
+        right: 14px;
+        background: var(--accent);
+        color: #fff;
+        border-radius: 999px;
+        padding: 4px 10px;
+        font-size: 0.75rem;
+        font-weight: 800;
+        letter-spacing: 0.02em;
+      }
+
+      .package-card-popular {
+        transform: scale(1.03);
+        box-shadow: 0 16px 36px rgba(24, 53, 89, 0.16);
+      }
+
+      .package-card-popular:hover {
+        transform: translateY(-3px) scale(1.03);
+      }
+
+      .steps {
+        margin: 10px 0 0;
+        padding-left: 20px;
+        color: var(--muted);
+      }
+
+      .faq-list {
+        margin: 8px 0 0;
+        display: grid;
+        gap: 0;
+      }
+
+      .faq-item {
+        border-top: 1px solid var(--border);
+        padding-top: 12px;
+        padding-bottom: 4px;
+        margin-bottom: 16px;
+        border-radius: 10px;
+        transition: background 0.2s ease;
+      }
+
+      .faq-item:hover {
+        background: #f6f9fc;
+      }
+
+      .customize-list,
+      .note,
+      .cta {
+        margin: 0;
+      }
+
+      .site-footer {
+        margin-top: var(--section-lg);
+        border-top: 1px solid var(--border);
+        padding: 24px 0 30px;
+        text-align: center;
+        color: var(--muted-strong);
+      }
+
+      .site-footer p {
+        margin: 0;
+      }
+
+      .block-section {
+        padding: var(--section-lg) var(--box-pad-x);
+        background: #f8fafc;
+      }
+
+      .block-section-sm {
+        padding: var(--section-sm) var(--box-pad-x);
+        background: #f8fafc;
+      }
+
+      .simple-section.block-section {
+        background: #ffffff;
+      }
+
+      .simple-section.block-section-sm {
+        background: #ffffff;
+      }
+
+      .customize-list.block-section-sm {
+        background: #f8fafc;
+      }
+
+      .cta.block-section {
+        background: #f1f5f9;
+        text-align: center;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 18px;
+      }
+
+      .cta.block-section > div {
+        max-width: 760px;
+      }
+
+      @media (max-width: 1024px) {
+        :root {
+          --section-lg: 60px;
+          --section-sm: 40px;
+        }
+
+        .cards,
+        .pricing-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      @media (max-width: 900px) {
+        .package-card-popular,
+        .package-card-popular:hover {
+          transform: none;
+        }
+
+        .hero {
+          padding: 56px 0 48px;
+        }
+
+        .hero-cta-row {
+          flex-direction: column;
+          gap: 8px;
+        }
+
+        .benefit-row {
+          justify-content: center;
+        }
+
+        .block-section,
+        .block-section-sm {
+          padding-left: 20px;
+          padding-right: 20px;
+        }
+
+        .floating-whatsapp {
+          right: 14px;
+          bottom: calc(14px + env(safe-area-inset-bottom));
+          width: 52px;
+          height: 52px;
+        }
+      }
+
+      @media (max-width: 640px) {
+        :root {
+          --section-lg: 48px;
+          --section-sm: 48px;
+        }
+
+        .cards,
+        .pricing-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .container {
+          padding-left: 18px;
+          padding-right: 18px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <section class="hero">
+        <div class="container">
+          <h1>Professional Business Websites for Small Businesses</h1>
+          <p class="hero-subtitle">
+            A clean and modern website helps customers understand your services, build trust, and
+            contact your business easily.
+          </p>
+          <p class="hero-audience">Suitable for local SMEs, startups, and service providers in Malaysia.</p>
+          <div class="hero-cta-row">
+            <span class="hero-highlight">Starting from RM199</span>
+            <a class="btn btn-secondary" href="#demo-styles">View Website Styles</a>
+            <a class="btn btn-whatsapp" href="https://wa.me/60197502520" target="_blank" rel="noopener noreferrer">WhatsApp to Inquire</a>
+          </div>
+          <div class="benefit-row" aria-label="Key benefits">
+            <span class="benefit-chip">Responsive Design</span>
+            <span class="benefit-chip">Mobile Friendly</span>
+            <span class="benefit-chip">Fast Setup</span>
+            <span class="benefit-chip">Easy to Customize</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="container" id="demo-styles">
+        <div class="block-section">
+          <div class="section-intro">
+            <h2>Website Demo Styles</h2>
+            <p>Choose a sample style below and see how your business website can look.</p>
+          </div>
+
+          <div class="cards">
+            <article class="card">
+              <h2>Restaurant Demo</h2>
+              <p>Warm and food-focused design for cafes, bistros, and local dining brands.</p>
+              <p class="fit-line">Suitable for: Restaurant / Cafe / Bakery</p>
+              <a class="btn btn-primary" href="./restaurant-demo/index.html" target="_blank" rel="noopener">Open Luna Bistro Demo</a>
+            </article>
+
+            <article class="card">
+              <h2>Beauty Salon Demo</h2>
+              <p>Elegant and clean design for salons, lash studios, and facial service providers.</p>
+              <p class="fit-line">Suitable for: Beauty Salon / Lash Studio / Facial Studio</p>
+              <a class="btn btn-primary" href="./beauty-salon-demo/index.html" target="_blank" rel="noopener">Open Velvet Glow Demo</a>
+            </article>
+
+            <article class="card">
+              <h2>Company Profile Demo</h2>
+              <p>Professional modern layout for service companies, startups, and SME brands.</p>
+              <p class="fit-line">Suitable for: Company Profile / Service Business / Startup</p>
+              <a class="btn btn-primary" href="./company-profile-demo/index.html" target="_blank" rel="noopener">Open Nova Peak Demo</a>
+            </article>
+          </div>
+        </div>
+        <div class="simple-section block-section">
+          <h3>Simple Website Packages</h3>
+          <div class="pricing-grid">
+            <article class="card package-card">
+              <h4 class="package-name">Starter</h4>
+              <p class="package-desc">For new businesses starting online</p>
+              <p class="price-range">RM199 - RM299</p>
+              <p>1-3 pages</p>
+              <p>Responsive design</p>
+              <p>Basic business information</p>
+              <p>Contact section</p>
+              <a class="btn btn-primary" href="#final-cta">Get Starter Website</a>
+            </article>
+
+            <article class="card package-card package-card-popular">
+              <span class="popular-badge">Most Popular</span>
+              <h4 class="package-name">Business</h4>
+              <p class="package-desc">For growing SMEs needing stronger conversion</p>
+              <p class="price-range">RM399 - RM599</p>
+              <p>Up to 5 pages</p>
+              <p>Service sections</p>
+              <p>Gallery section</p>
+              <p>Responsive design</p>
+              <a class="btn btn-primary" href="#final-cta">Get Business Website</a>
+            </article>
+
+            <article class="card package-card">
+              <h4 class="package-name">Premium</h4>
+              <p class="package-desc">For brands requiring more customization</p>
+              <p class="price-range">RM699 - RM999</p>
+              <p>Up to 8 pages</p>
+              <p>Custom layout</p>
+              <p>Gallery</p>
+              <p>More revisions</p>
+              <a class="btn btn-primary" href="#final-cta">Get Premium Website</a>
+            </article>
+          </div>
+          <p class="pricing-note">Domain and hosting are charged separately on a yearly basis.</p>
+        </div>
+
+        <div class="customize-list block-section-sm">
+          <h3>What can be customized?</h3>
+          <ul>
+            <li>Logo</li>
+            <li>Colors</li>
+            <li>Business information</li>
+            <li>Services</li>
+            <li>Contact details</li>
+            <li>Photos</li>
+            <li>Sections needed</li>
+          </ul>
+        </div>
+
+        <div class="simple-section block-section-sm">
+          <h3>How it works</h3>
+          <ol class="steps">
+            <li>Share your business details</li>
+            <li>Choose your preferred website style</li>
+            <li>I customize the website for your business</li>
+            <li>Review and final delivery</li>
+          </ol>
+        </div>
+
+        <div class="simple-section block-section-sm">
+          <h3>Frequently Asked Questions</h3>
+          <div class="faq-list">
+            <div class="faq-item">
+              <p><strong>Is domain included?</strong></p>
+              <p>Domain and hosting can be arranged for you, or we can use your existing setup.</p>
+            </div>
+            <div class="faq-item">
+              <p><strong>Can I use my own photos?</strong></p>
+              <p>Yes. Your own photos are recommended to build trust and reflect your real business.</p>
+            </div>
+            <div class="faq-item">
+              <p><strong>Is the website mobile friendly?</strong></p>
+              <p>Yes. Every demo is responsive and optimized for mobile, tablet, and desktop screens.</p>
+            </div>
+            <div class="faq-item">
+              <p><strong>Can the content be customized?</strong></p>
+              <p>Yes. Text, sections, contact details, branding, and service information can all be customized.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="cta block-section" id="final-cta">
+          <div>
+            <h3>Ready to build your business website?</h3>
+            <p>Tell us about your business and we'll recommend a suitable website style.</p>
+            <p>Based in Malaysia. Suitable for SMEs, startups, and local service providers.</p>
+            <p><strong>King Kong Studio</strong> - Simple Business Websites</p>
+          </div>
+          <!-- Replace with your real WhatsApp number -->
+          <a
+            class="btn btn-whatsapp"
+            href="https://wa.me/60197502520"
+            target="_blank"
+            rel="noopener noreferrer"
+            >WhatsApp to Inquire</a
+          >
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>&copy; 2026 King Kong Studio</p>
+        <p>Business Website Design for SMEs</p>
+      </div>
+    </footer>
+
+    <a
+      class="floating-whatsapp"
+      href="https://wa.me/60197502520"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Contact us on WhatsApp"
+      >WhatsApp</a
+    >
+  </body>
+</html>
