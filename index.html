@@ -23,7 +23,7 @@
         --whatsapp: #25d366;
         --whatsapp-dark: #1ca653;
         --shadow-soft: 0 4px 16px rgba(0, 0, 0, 0.05);
-        --section-lg: 64px;
+        --section-lg: 60px;
         --section-sm: 40px;
         --box-pad-x: 32px;
         --radius: 12px;
@@ -58,57 +58,72 @@
         text-align: center;
       }
 
-      .hero-highlight {
-        display: inline-block;
-        padding: 6px 12px;
-        border-radius: 999px;
-        background: var(--surface-alt);
-        border: 1px solid var(--border);
-        color: var(--primary-dark);
-        font-weight: 700;
-        font-size: 0.92rem;
-      }
-
       .hero-subtitle {
         max-width: 720px;
-        margin: 0 auto 10px;
+        margin: 0 auto 20px;
       }
 
       .hero-audience {
         color: var(--muted-strong);
-        margin: 0 auto 14px;
+        margin: 0 auto 24px;
         max-width: 720px;
+      }
+
+      .hero h1 {
+        margin: 0 0 24px;
       }
 
       .hero-cta-row {
         display: flex;
         align-items: center;
         justify-content: center;
-        gap: 10px;
-        margin-bottom: 14px;
+        gap: 12px;
+        margin-bottom: 20px;
         flex-wrap: wrap;
       }
 
+      .hero-cta-row .btn-primary {
+        background: #2563eb;
+        color: #fff;
+      }
+
+      .hero-cta-row .btn-primary:hover {
+        background: #1d4ed8;
+      }
+
       .benefit-row {
-        margin: 2px auto 0;
+        margin: 0 auto;
         display: flex;
-        flex-wrap: wrap;
+        flex-wrap: nowrap;
         justify-content: center;
-        gap: 10px;
+        gap: 18px;
         max-width: 860px;
       }
 
       .benefit-chip {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        border: 1px solid var(--border);
-        border-radius: 999px;
-        background: #f1f5f9;
-        padding: 8px 14px;
-        color: var(--muted-strong);
+        display: inline-block;
+        color: #4b5563;
         font-size: 14px;
-        font-weight: 700;
+        font-weight: 600;
+        opacity: 0;
+        transform: translateY(6px);
+        animation: featureIn 0.35s ease-out forwards;
+      }
+
+      .benefit-chip:nth-child(1) {
+        animation-delay: 0.06s;
+      }
+
+      .benefit-chip:nth-child(2) {
+        animation-delay: 0.14s;
+      }
+
+      .benefit-chip:nth-child(3) {
+        animation-delay: 0.22s;
+      }
+
+      .benefit-chip:nth-child(4) {
+        animation-delay: 0.3s;
       }
 
       h1,
@@ -139,15 +154,15 @@
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 24px;
-        margin: 14px 0 14px;
+        margin: 14px 0 10px;
       }
 
       .price-range {
         color: var(--primary-dark);
-        font-weight: 800;
-        font-size: 1.6rem;
+        font-weight: 900;
+        font-size: 1.95rem;
         line-height: 1.2;
-        margin-bottom: 4px;
+        margin: 4px 0 6px;
       }
 
       .pricing-note {
@@ -171,8 +186,8 @@
       }
 
       .card:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 14px 32px rgba(24, 53, 89, 0.12);
+        transform: translateY(-4px);
+        box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
       }
 
       .card p {
@@ -184,10 +199,28 @@
       }
 
       .fit-line {
-        margin-top: -2px;
+        margin-top: 0;
         color: var(--muted-strong);
         font-size: 0.9rem;
         font-weight: 600;
+      }
+
+      .demo-preview {
+        margin-bottom: 18px;
+        border-radius: 12px;
+        overflow: hidden;
+      }
+
+      .demo-preview img {
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        object-fit: cover;
+        border-radius: 12px;
+        transition: transform 0.25s ease;
+      }
+
+      .demo-card:hover .demo-preview img {
+        transform: scale(1.03);
       }
 
       .btn {
@@ -200,11 +233,13 @@
         min-height: 44px;
         text-decoration: none;
         font-weight: 700;
-        transition: 0.2s ease;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+        transition: transform 0.18s ease, box-shadow 0.18s ease, background-color 0.18s ease;
       }
 
       .btn:hover {
-        transform: translateY(-1px);
+        transform: translateY(-2px);
+        box-shadow: 0 8px 18px rgba(0, 0, 0, 0.1);
       }
 
       .btn-primary {
@@ -232,7 +267,7 @@
         border-radius: var(--radius);
         padding: 20px;
         margin-bottom: 26px;
-      }
+      }·
 
       .customize-list {
         background: var(--surface);
@@ -246,6 +281,8 @@
         margin: 8px 0 0;
         padding-left: 20px;
         color: var(--muted);
+        columns: 2;
+        column-gap: 28px;
       }
 
       .cta {
@@ -270,29 +307,35 @@
         background: var(--whatsapp-dark);
       }
 
-      .floating-whatsapp {
+      .whatsapp-float {
         position: fixed;
-        right: 20px;
-        bottom: calc(20px + env(safe-area-inset-bottom));
-        width: 54px;
-        height: 54px;
+        bottom: calc(24px + env(safe-area-inset-bottom));
+        right: 24px;
+        background: #25d366;
+        width: 60px;
+        height: 60px;
         border-radius: 50%;
-        display: inline-flex;
+        display: flex;
         align-items: center;
         justify-content: center;
-        background: var(--whatsapp);
-        color: #fff;
-        font-size: 0.75rem;
-        font-weight: 800;
         text-decoration: none;
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-        z-index: 40;
-        transition: transform 0.2s ease, background 0.2s ease;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+        cursor: pointer;
+        z-index: 999;
+        transition: transform 0.18s ease, box-shadow 0.18s ease;
+        animation: whatsappPulse 5s ease-out infinite;
       }
 
-      .floating-whatsapp:hover {
-        background: var(--whatsapp-dark);
-        transform: translateY(-2px) scale(1.03);
+      .whatsapp-float:hover {
+        transform: translateY(-3px) scale(1.03);
+        box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
+      }
+
+      .whatsapp-float svg {
+        width: 28px;
+        height: 28px;
+        fill: white;
+        display: block;
       }
 
       .simple-section {
@@ -324,6 +367,7 @@
 
       .package-card {
         position: relative;
+        min-height: 100%;
       }
 
       .package-card .btn {
@@ -332,6 +376,7 @@
 
       .package-name {
         margin: 0 0 2px;
+        font-size: 1.15rem;
       }
 
       .package-desc {
@@ -339,6 +384,17 @@
         color: var(--muted-strong);
         font-size: 0.9rem;
         font-weight: 600;
+      }
+
+      .package-features {
+        margin: 4px 0 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .package-features li {
+        margin: 0 0 6px;
+        color: var(--muted);
       }
 
       .popular-badge {
@@ -364,28 +420,109 @@
       }
 
       .steps {
-        margin: 10px 0 0;
-        padding-left: 20px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 16px;
+      }
+
+      .step-card {
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        padding: 14px;
+        background: #f9fbfd;
+        transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+      }
+
+      .step-number {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        background: var(--primary);
+        color: #fff;
+        font-size: 0.82rem;
+        font-weight: 700;
+        margin-bottom: 8px;
+        transition: transform 0.2s ease, background-color 0.2s ease;
+      }
+
+      .step-card p {
+        margin: 0;
         color: var(--muted);
+      }
+
+      .step-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+        border-color: #cfdceb;
+      }
+
+      .step-card:hover .step-number {
+        transform: scale(1.06);
+        background: var(--primary-dark);
       }
 
       .faq-list {
         margin: 8px 0 0;
         display: grid;
-        gap: 0;
+        gap: 10px;
       }
 
       .faq-item {
-        border-top: 1px solid var(--border);
-        padding-top: 12px;
-        padding-bottom: 4px;
-        margin-bottom: 16px;
+        border: 1px solid var(--border);
+        padding: 14px 16px;
+        margin-bottom: 0;
         border-radius: 10px;
-        transition: background 0.2s ease;
+        background: #fbfdff;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+      }
+
+      .faq-item p {
+        margin-bottom: 8px;
       }
 
       .faq-item:hover {
-        background: #f6f9fc;
+        transform: translateY(-2px);
+        box-shadow: 0 8px 18px rgba(0, 0, 0, 0.06);
+      }
+
+      .js .reveal-on-scroll {
+        opacity: 0;
+        transform: translateY(18px);
+        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        will-change: opacity, transform;
+      }
+
+      .js .reveal-on-scroll.is-visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      @keyframes featureIn {
+        from {
+          opacity: 0;
+          transform: translateY(6px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes whatsappPulse {
+        0%,
+        82%,
+        100% {
+          box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2), 0 0 0 0 rgba(37, 211, 102, 0);
+        }
+        88% {
+          box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2), 0 0 0 9px rgba(37, 211, 102, 0.14);
+        }
       }
 
       .customize-list,
@@ -416,6 +553,17 @@
         background: #f8fafc;
       }
 
+      #demo-styles > .block-section,
+      #demo-styles > .simple-section,
+      #demo-styles > .customize-list,
+      #demo-styles > .block-section-sm {
+        margin-bottom: 24px;
+      }
+
+      #demo-styles > :last-child {
+        margin-bottom: 0;
+      }
+
       .simple-section.block-section {
         background: #ffffff;
       }
@@ -441,6 +589,11 @@
         max-width: 760px;
       }
 
+      .cta .btn-whatsapp {
+        padding: 12px 24px;
+        min-width: 220px;
+      }
+
       @media (max-width: 1024px) {
         :root {
           --section-lg: 60px;
@@ -449,6 +602,10 @@
 
         .cards,
         .pricing-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        .steps {
           grid-template-columns: repeat(2, 1fr);
         }
       }
@@ -469,7 +626,9 @@
         }
 
         .benefit-row {
+          flex-wrap: wrap;
           justify-content: center;
+          gap: 10px 16px;
         }
 
         .block-section,
@@ -478,18 +637,22 @@
           padding-right: 20px;
         }
 
-        .floating-whatsapp {
-          right: 14px;
-          bottom: calc(14px + env(safe-area-inset-bottom));
-          width: 52px;
-          height: 52px;
+        .customize-list ul {
+          columns: 1;
+        }
+
+        .whatsapp-float {
+          right: 16px;
+          bottom: calc(16px + env(safe-area-inset-bottom));
+          width: 60px;
+          height: 60px;
         }
       }
 
       @media (max-width: 640px) {
         :root {
           --section-lg: 48px;
-          --section-sm: 48px;
+          --section-sm: 36px;
         }
 
         .cards,
@@ -500,6 +663,33 @@
         .container {
           padding-left: 18px;
           padding-right: 18px;
+        }
+
+        .steps {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+
+        .benefit-chip,
+        .whatsapp-float,
+        .btn,
+        .card,
+        .step-card,
+        .step-number,
+        .faq-item,
+        .js .reveal-on-scroll {
+          animation: none !important;
+          transition: none !important;
+          transform: none !important;
+        }
+
+        .js .reveal-on-scroll {
+          opacity: 1 !important;
         }
       }
     </style>
@@ -515,42 +705,50 @@
           </p>
           <p class="hero-audience">Suitable for local SMEs, startups, and service providers in Malaysia.</p>
           <div class="hero-cta-row">
-            <span class="hero-highlight">Starting from RM199</span>
-            <a class="btn btn-secondary" href="#demo-styles">View Website Styles</a>
+            <a class="btn btn-primary" href="#demo-styles">View Demo Websites</a>
             <a class="btn btn-whatsapp" href="https://wa.me/60197502520" target="_blank" rel="noopener noreferrer">WhatsApp to Inquire</a>
           </div>
           <div class="benefit-row" aria-label="Key benefits">
-            <span class="benefit-chip">Responsive Design</span>
-            <span class="benefit-chip">Mobile Friendly</span>
-            <span class="benefit-chip">Fast Setup</span>
-            <span class="benefit-chip">Easy to Customize</span>
+            <span class="benefit-chip">✔ Responsive Design</span>
+            <span class="benefit-chip">✔ Mobile Friendly</span>
+            <span class="benefit-chip">✔ Fast Setup</span>
+            <span class="benefit-chip">✔ Easy to Customize</span>
           </div>
         </div>
       </section>
 
       <section class="container" id="demo-styles">
-        <div class="block-section">
+        <div class="block-section reveal-on-scroll">
           <div class="section-intro">
             <h2>Website Demo Styles</h2>
             <p>Choose a sample style below and see how your business website can look.</p>
           </div>
 
           <div class="cards">
-            <article class="card">
+            <article class="card demo-card">
+              <div class="demo-preview">
+                <img src="assets/images/restaurant-demo.png" alt="Restaurant Demo Preview" />
+              </div>
               <h2>Restaurant Demo</h2>
               <p>Warm and food-focused design for cafes, bistros, and local dining brands.</p>
               <p class="fit-line">Suitable for: Restaurant / Cafe / Bakery</p>
               <a class="btn btn-primary" href="./restaurant-demo/index.html" target="_blank" rel="noopener">Open Luna Bistro Demo</a>
             </article>
 
-            <article class="card">
+            <article class="card demo-card">
+              <div class="demo-preview">
+                <img src="assets/images/beauty-salon-demo.png" alt="Beauty Salon Demo Preview" />
+              </div>
               <h2>Beauty Salon Demo</h2>
               <p>Elegant and clean design for salons, lash studios, and facial service providers.</p>
               <p class="fit-line">Suitable for: Beauty Salon / Lash Studio / Facial Studio</p>
               <a class="btn btn-primary" href="./beauty-salon-demo/index.html" target="_blank" rel="noopener">Open Velvet Glow Demo</a>
             </article>
 
-            <article class="card">
+            <article class="card demo-card">
+              <div class="demo-preview">
+                <img src="assets/images/company-profile-demo.png" alt="Company Profile Demo Preview" />
+              </div>
               <h2>Company Profile Demo</h2>
               <p>Professional modern layout for service companies, startups, and SME brands.</p>
               <p class="fit-line">Suitable for: Company Profile / Service Business / Startup</p>
@@ -558,17 +756,19 @@
             </article>
           </div>
         </div>
-        <div class="simple-section block-section">
+        <div class="simple-section block-section reveal-on-scroll">
           <h3>Simple Website Packages</h3>
           <div class="pricing-grid">
             <article class="card package-card">
               <h4 class="package-name">Starter</h4>
               <p class="package-desc">For new businesses starting online</p>
               <p class="price-range">RM199 - RM299</p>
-              <p>1-3 pages</p>
-              <p>Responsive design</p>
-              <p>Basic business information</p>
-              <p>Contact section</p>
+              <ul class="package-features">
+                <li>1-3 pages</li>
+                <li>Responsive design</li>
+                <li>Basic business information</li>
+                <li>Contact section</li>
+              </ul>
               <a class="btn btn-primary" href="#final-cta">Get Starter Website</a>
             </article>
 
@@ -577,10 +777,12 @@
               <h4 class="package-name">Business</h4>
               <p class="package-desc">For growing SMEs needing stronger conversion</p>
               <p class="price-range">RM399 - RM599</p>
-              <p>Up to 5 pages</p>
-              <p>Service sections</p>
-              <p>Gallery section</p>
-              <p>Responsive design</p>
+              <ul class="package-features">
+                <li>Up to 5 pages</li>
+                <li>Service sections</li>
+                <li>Gallery section</li>
+                <li>Responsive design</li>
+              </ul>
               <a class="btn btn-primary" href="#final-cta">Get Business Website</a>
             </article>
 
@@ -588,17 +790,19 @@
               <h4 class="package-name">Premium</h4>
               <p class="package-desc">For brands requiring more customization</p>
               <p class="price-range">RM699 - RM999</p>
-              <p>Up to 8 pages</p>
-              <p>Custom layout</p>
-              <p>Gallery</p>
-              <p>More revisions</p>
+              <ul class="package-features">
+                <li>Up to 8 pages</li>
+                <li>Custom layout</li>
+                <li>Gallery</li>
+                <li>More revisions</li>
+              </ul>
               <a class="btn btn-primary" href="#final-cta">Get Premium Website</a>
             </article>
           </div>
           <p class="pricing-note">Domain and hosting are charged separately on a yearly basis.</p>
         </div>
 
-        <div class="customize-list block-section-sm">
+        <div class="customize-list block-section-sm reveal-on-scroll">
           <h3>What can be customized?</h3>
           <ul>
             <li>Logo</li>
@@ -611,17 +815,29 @@
           </ul>
         </div>
 
-        <div class="simple-section block-section-sm">
+        <div class="simple-section block-section-sm reveal-on-scroll">
           <h3>How it works</h3>
           <ol class="steps">
-            <li>Share your business details</li>
-            <li>Choose your preferred website style</li>
-            <li>I customize the website for your business</li>
-            <li>Review and final delivery</li>
+            <li class="step-card">
+              <span class="step-number">1</span>
+              <p>Share your business details</p>
+            </li>
+            <li class="step-card">
+              <span class="step-number">2</span>
+              <p>Choose your preferred website style</p>
+            </li>
+            <li class="step-card">
+              <span class="step-number">3</span>
+              <p>I customize the website for your business</p>
+            </li>
+            <li class="step-card">
+              <span class="step-number">4</span>
+              <p>Review and final delivery</p>
+            </li>
           </ol>
         </div>
 
-        <div class="simple-section block-section-sm">
+        <div class="simple-section block-section-sm reveal-on-scroll">
           <h3>Frequently Asked Questions</h3>
           <div class="faq-list">
             <div class="faq-item">
@@ -643,7 +859,7 @@
           </div>
         </div>
 
-        <div class="cta block-section" id="final-cta">
+        <div class="cta block-section reveal-on-scroll" id="final-cta">
           <div>
             <h3>Ready to build your business website?</h3>
             <p>Tell us about your business and we'll recommend a suitable website style.</p>
@@ -669,13 +885,36 @@
       </div>
     </footer>
 
-    <a
-      class="floating-whatsapp"
-      href="https://wa.me/60197502520"
-      target="_blank"
-      rel="noopener noreferrer"
-      aria-label="Contact us on WhatsApp"
-      >WhatsApp</a
-    >
+    <a class="whatsapp-float" href="https://wa.me/60197502520" target="_blank" rel="noopener noreferrer" aria-label="Contact us on WhatsApp">
+      <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+        <path d="M16 3C8.83 3 3 8.83 3 16c0 2.82.92 5.41 2.47 7.5L4 29l5.66-1.47A12.94 12.94 0 0016 29c7.17 0 13-5.83 13-13S23.17 3 16 3zm0 23.5c-2.29 0-4.42-.62-6.24-1.7l-.45-.27-3.36.87.9-3.27-.29-.47A10.45 10.45 0 015.5 16C5.5 10.2 10.2 5.5 16 5.5S26.5 10.2 26.5 16 21.8 26.5 16 26.5zm5.73-7.77c-.31-.16-1.84-.91-2.12-1.02-.28-.1-.48-.16-.69.16-.2.31-.79 1.02-.96 1.23-.17.21-.34.23-.65.08-.31-.16-1.3-.48-2.48-1.53-.92-.82-1.54-1.83-1.72-2.14-.18-.31-.02-.48.14-.63.14-.14.31-.34.47-.51.16-.17.21-.28.31-.47.1-.2.05-.37-.02-.53-.07-.16-.69-1.66-.94-2.27-.25-.6-.5-.52-.69-.53l-.59-.01c-.2 0-.53.07-.81.37-.28.31-1.06 1.03-1.06 2.51s1.09 2.91 1.24 3.11c.16.2 2.15 3.29 5.2 4.61.73.32 1.3.51 1.75.65.73.23 1.39.2 1.91.12.58-.09 1.84-.75 2.1-1.47.26-.72.26-1.33.18-1.47-.07-.14-.28-.23-.59-.39z"/>
+      </svg>
+    </a>
+    <script>
+      document.documentElement.classList.add("js");
+
+      const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      const revealSections = document.querySelectorAll(".reveal-on-scroll");
+
+      if (reduceMotion || !("IntersectionObserver" in window)) {
+        revealSections.forEach((el) => el.classList.add("is-visible"));
+      } else {
+        const observer = new IntersectionObserver(
+          (entries, obs) => {
+            entries.forEach((entry) => {
+              if (!entry.isIntersecting) return;
+              entry.target.classList.add("is-visible");
+              obs.unobserve(entry.target);
+            });
+          },
+          {
+            threshold: 0.14,
+            rootMargin: "0px 0px -8% 0px",
+          }
+        );
+
+        revealSections.forEach((el) => observer.observe(el));
+      }
+    </script>
   </body>
 </html>
