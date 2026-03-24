@@ -594,6 +594,136 @@
         min-width: 220px;
       }
 
+      .pricing-extra-info {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 18px;
+        margin-top: 18px;
+      }
+
+      .extra-card {
+        background: linear-gradient(180deg, #f8fbff 0%, #f3f8fc 100%);
+        border: 1px solid var(--border);
+        border-radius: 14px;
+        padding: 18px 20px;
+        box-shadow: 0 4px 14px rgba(15, 23, 42, 0.04);
+      }
+
+      .extra-card-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        margin-bottom: 10px;
+        flex-wrap: wrap;
+      }
+
+      .extra-label {
+        font-size: 1rem;
+        font-weight: 800;
+        color: var(--text);
+      }
+
+      .extra-price {
+        font-size: 1.35rem;
+        font-weight: 900;
+        color: var(--primary-dark);
+        line-height: 1;
+      }
+
+      .extra-price span {
+        font-size: 0.85rem;
+        font-weight: 700;
+        color: var(--muted);
+        margin-left: 2px;
+      }
+
+      .extra-badge {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 5px 10px;
+        border-radius: 999px;
+        background: rgba(14, 165, 124, 0.12);
+        color: var(--accent);
+        font-size: 0.78rem;
+        font-weight: 800;
+        letter-spacing: 0.02em;
+      }
+
+      .extra-desc {
+        margin: 0 0 12px;
+        color: var(--muted);
+        font-size: 0.93rem;
+      }
+
+      .extra-feature-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .extra-feature-list li {
+        position: relative;
+        margin: 0 0 10px;
+        padding-left: 24px;
+        color: var(--muted-strong);
+      }
+
+      .extra-feature-list li:last-child {
+        margin-bottom: 0;
+      }
+
+      .extra-feature-list li::before {
+        content: "✓";
+        position: absolute;
+        left: 0;
+        top: 0;
+        font-weight: 800;
+        color: var(--primary);
+      }
+
+      .extra-addon-list li {
+        padding-left: 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        border-top: 1px solid rgba(220, 231, 241, 0.9);
+        padding-top: 10px;
+      }
+
+      .extra-addon-list li::before {
+        display: none;
+      }
+
+      .extra-addon-list li:first-child {
+        border-top: 0;
+        padding-top: 0;
+      }
+
+      .extra-addon-list strong {
+        color: var(--text);
+        font-weight: 700;
+      }
+
+      .extra-addon-list span {
+        color: var(--primary-dark);
+        font-weight: 800;
+        white-space: nowrap;
+      }
+
+      @media (max-width: 640px) {
+        .pricing-extra-info {
+          grid-template-columns: 1fr;
+        }
+
+        .extra-addon-list li {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+      }
+
       @media (max-width: 1024px) {
         :root {
           --section-lg: 60px;
@@ -800,7 +930,34 @@
             </article>
           </div>
           <p class="pricing-note">Domain and hosting are charged separately on a yearly basis.</p>
-        </div>
+          <div class="pricing-extra-info">
+            <div class="extra-card">
+              <div class="extra-card-header">
+                <span class="extra-label">Annual Support</span>
+                <span class="extra-price">RM100<span>/year</span></span>
+              </div>
+              <p class="extra-desc">Suitable for small ongoing updates after website delivery.</p>
+              <ul class="extra-feature-list">
+                <li>Minor text and image updates</li>
+                <li>Up to 2 requests per month</li>
+                <li>Response within 2–3 working days</li>
+              </ul>
+            </div>
+          
+            <div class="extra-card">
+              <div class="extra-card-header">
+                <span class="extra-label">Add-ons</span>
+                <span class="extra-badge">Optional</span>
+              </div>
+              <p class="extra-desc">Add more content or request changes anytime as needed.</p>
+              <ul class="extra-feature-list extra-addon-list">
+                <li><strong>Extra page</strong><span>RM50 / page</span></li>
+                <li><strong>New section</strong><span>RM30+</span></li>
+                <li><strong>Content change</strong><span>RM20+</span></li>
+                <li><strong>Redesign</strong><span>Quoted separately</span></li>
+              </ul>
+            </div>
+          </div>
 
         <div class="customize-list block-section-sm reveal-on-scroll">
           <h3>What can be customized?</h3>
